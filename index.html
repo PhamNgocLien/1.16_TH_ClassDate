@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Date</title>
+</head>
+<body>
+<script>
+    function MyDate(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function () {
+            return this.day;
+        }
+        this.setDay = function (day) {
+            this.day = day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+        this.setYear = function (year) {
+            this.year = year;
+        }
+        this.setDate = function (day,month,year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        this.toString = function () {
+            return [this.day,this.month,this.year];
+        }
+    }
+    let date = new MyDate(24,7,2020);
+
+    date.setDay(10);
+    let day = date.getDay();
+    date.setMonth(12);
+    let month = date.getMonth();
+    date.setYear(1987);
+    let year = date.getYear();
+    alert(day + "/" + month + "/" + year);
+
+    date.setDate(8,7,1991);
+    let date2 = date.toString();
+    alert(date2.join("/"));
+</script>
+</body>
+</html>
